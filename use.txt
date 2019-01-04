@@ -1,0 +1,40 @@
+
+#To change ip
+~/anand/ui/vatstests$ vi ~/anand_rowan.yaml
+(i edit)
+ESC:wq ENTER
+#To change path
+~/anand/ui/vatstests$ vi ~/.bashrc
+#--------------------------------------------------------------------------------------------------------------#
+#Test case to run on VM
+~/anand/ui/vatstests$ source ~/vatsEnv/bin/activate  (alt ctrl R sourse for both UI/VATS)
+~/anand/vats$ find . -type f -iname "*.pyc" -delete;/usr/bin/make develop install(alt ctrl R find only for vats not for UI)
+~/anand/ui/vatstests$ git status
+~/anand/ui/vatstests$ git add modified file
+#to check doc
+cd vplex/gui
+:~/anand/vats$ find . -type f -iname "*.pyc" -delete;pycodestyle *;flake8;pylint -E *;pep257 --ignore=D100,D101,D102,D103,D104,D105,D203,D301
+~/anand/ui/vatstests$ vats execute ui/testcases/gui/gui/test_create_distributed_device.py -c ~/anand_rowan.yaml
+#To generate Tar
+~/anand/ui/vatstests$ tar -cvf claim_storage_vats_logs.tar vats_logs/ 
+#-------------------------------------------------------------------------------------------------------------#
+#Second time pussing code
+~/anand/vats$ git add (Only changed file added)
+~/anand/vats$ git commit -a -m "hijkkhdfd"
+~/anand/vats$ git pull --rebase
+~/anand/vats$ git rebase -i(its open new window USE DD for deleting and select squase and right click)
+~/anand/vats$ git push origin  z/bhosla/distributed_device_create --force
+#-------------------------------------------------------------------------------------------------------------#
+~/anand/ui/vatstests$ vats execute ui/testcases/gui/test_create_distributed_devices.py -c ~/anand_rowan.yaml
+                                                                      
+#First time
+/anand/ui/vatstests$ git commit
+/anand/ui/vatstests$ git push origin  z/bhosla/Test_distributed_device_
+we get 
+ https://gitlabee.spgear.lab.emc.com/vplex/ui/merge_requests/new?merge_request%5Bsource_branch
+
+to remove old tar
+~/anand/ui/vatstests$ ls
+
+#to remove all modified files on git
+git reset --hard
